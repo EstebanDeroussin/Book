@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
+const validator = require("validator")
 
 exports.signup = async (req, res, next) => {
   try {
@@ -8,6 +9,10 @@ exports.signup = async (req, res, next) => {
 
     if (!email || !password) {
       return res.status(400).json({ message: "Email et mot de passe requis." });
+    }
+
+    if (!validator.isEmail(email)) {
+      return res.status(400).json({message: "Credential is not an email"})
     }
 
     const existingUser = await User.findOne({ email });

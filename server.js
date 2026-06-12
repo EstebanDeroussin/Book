@@ -1,4 +1,6 @@
+// on utilise le module http de node
 const http = require("http");
+// import d'app.js
 const app = require("./app");
 
 const normalizePort = (val) => {

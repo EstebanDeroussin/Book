@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
     const token = req.headers.authorization.split(" ")[1];
     const verifiedToken = jwt.verify(token, process.env.JWT_SECRET);
 
-    req.auth = verifiedToken.userId;
+    req.auth = verifiedToken
     next();
   } catch (error) {
     return res
