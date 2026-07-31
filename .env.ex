@@ -1,0 +1,6 @@
+JWT_SECRET=le_secret_bien_gardé
+PORT=4000
+LOGIN=TonLogin
+PASSWORD=TonPassword
+CLUSTER=Toncluster
+DATABASE=TaBase
