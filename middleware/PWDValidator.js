@@ -15,7 +15,6 @@ schema
 
 const validatePassword = (req, res, next) => {
     const password = req.body.password;
-    console.log(password);
     if (!schema.validate(password)) {
         return res.status(400).json({ message: "Mot de passe non valide. Il doit contenir au moins 8 caractères, une majuscule, une minuscule, deux chiffres et ne pas contenir d'espaces." });
     } else {
